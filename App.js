@@ -1,20 +1,48 @@
+// App.js - Main entry point
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import TapGame from './screens/TapGame';
+import ShakeGame from './screens/ShakeGame';
+import MazeGame from './screens/MazeGame';
+import ScanScreen from './screens/ScanScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import NFCScreen from './screens/NFCScreen';
+import TabBar from './components/TabBar';
 
-export default function App() {
+const App = () => {
+  const [currentScreen, setCurrentScreen] = useState('Profile'); 
+  
+  const renderScreen = () => {
+    switch(currentScreen) {
+      case 'Scan':
+        return <ScanScreen navigation={{ navigate: setCurrentScreen }} />;
+      case 'Profile':
+        return <ProfileScreen navigation={{ navigate: setCurrentScreen }} />;
+      case 'NFC':
+        return <NFCScreen navigation={{ goBack: () => setCurrentScreen('Profile') }} />;
+      default:
+        return <ProfileScreen navigation={{ navigate: setCurrentScreen }} />;
+    }
+  };
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.appContainer}>
+      {renderScreen()}
+      <TabBar 
+        currentScreen={currentScreen} 
+        setCurrentScreen={setCurrentScreen} 
+      />
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+
+export default App;
