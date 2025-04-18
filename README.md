@@ -22,13 +22,13 @@ QR Style Studio is a custom-built application where users can **generate, style,
 ## ✨ Key Features
 
 - **🎨 Prompt-based QR Styling**  
-  Describe how you want your QR code to look (e.g., "circular dots, red theme, techy")
+  Describe how you want your QR code to look (e.g., "background, theme etc.")
 
 - **📷 Upload QR Mask Image**  
-  Add logos or custom masks to personalize your QR codes
+  can add personalisation to your QR codes
 
 - **🎛️ Modern Interactive Dashboard**  
-  Clean sidebar navigation with real-time preview
+  Clean and Interactive UI.
 
 - **📱 Responsive Design**  
   Works seamlessly on desktop and mobile devices
