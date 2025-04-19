@@ -103,7 +103,6 @@ yarn dev
 ```
 ```vbnet
 
-Once you're done, you can also publish it to GitHub to show it off!
+O
 
-Would you also like a cover image or GitHub banner design suggestion for it?
 ```
